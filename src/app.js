@@ -8,6 +8,8 @@ const forecast = require('./utils/forecast');
 const app = express();
 const port = process.env.PORT || 3000;
 
+const appAuthor = "GAUPC13";
+
 // define paths for express config
 const publicDirPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -24,22 +26,22 @@ app.use(express.static(publicDirPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: 'Bubbles'
+        name: appAuthor
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
-        name: 'Bubbles'
+        name: appAuthor
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        name: 'Bubbles',
-        message: 'Helpful hint: Randers *LOVES* cheeseburgers!'
+        name: appAuthor,
+        message: 'Helpful hint: Tip your waitstaff!'
     });
 });
 
@@ -87,7 +89,7 @@ app.get('/products', (req, res) => {
 app.get('/help/*', (req,res) => {
     res.render('404', {
         title: '404',
-        name: 'Bubbles',
+        name: appAuthor,
         errorMessage: 'Help article not found.'
     });
 })
@@ -95,7 +97,7 @@ app.get('/help/*', (req,res) => {
 app.get('*', (req,res) => {
     res.render('404', {
         title: '404',
-        name: 'Bubbles',
+        name: 'Gaupc13',
         errorMessage:'Page not found.'
     });
 })
