@@ -32,14 +32,14 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Page',
+        title: 'About',
         name: appAuthor
     });
 });
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help Page',
+        title: 'Help',
         name: appAuthor,
         message: 'Helpful hint: Tip your waitstaff!'
     });
@@ -67,7 +67,8 @@ app.get('/weather', (req, res) => {
 
             res.send({
                 location: location,
-                forecast: forecastData,
+                forecast: forecastData.currently,
+                timeStamp: forecastData.timeStamp,
                 address: req.query.address
             });
         });
