@@ -8,7 +8,7 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <p>Use this site to get your weather</p>
+
         <form>
             <input placeholder="zipcode or city">
             <button>Search</button>
@@ -16,10 +16,13 @@
 
         <p id="message-1"></p>
         <p id="message-2"></p>
+        <canvas id="icon1" width="64" height="64"></canvas>
         <p id="message-3"></p>
     </div>
    
     {{>footer}}
+
+    <script src="https://rawgit.com/darkskyapp/skycons/master/skycons.js"></script>
     <script src="/js/app.js"></script>
 </body>
 </html>

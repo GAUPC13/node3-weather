@@ -41,7 +41,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
         name: appAuthor,
-        message: 'Helpful hint: Tip your waitstaff!'
+        message: 'Enter a zipcode or city name to find the current weather there.'
     });
 });
 
@@ -69,6 +69,7 @@ app.get('/weather', (req, res) => {
                 location: location,
                 forecast: forecastData.currently,
                 timeStamp: forecastData.timeStamp,
+                icon: forecastData.icon,
                 address: req.query.address
             });
         });

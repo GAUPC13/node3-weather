@@ -21,9 +21,13 @@ weatherForm.addEventListener('submit', (e) => {
                 messageOne.textContent = `ERROR: ${data.error}`;
             }
             else {
-                messageOne.textContent = `Location: ${data.location}`;
-                messageTwo.textContent = `Forecast: ${data.forecast}`;
+                messageOne.textContent = data.location;
+                messageTwo.textContent = data.forecast;
                 messageThree.textContent = data.timeStamp;
+
+                const skycons = new Skycons({"color": "#146EB4"});
+                 skycons.add("icon1", data.icon);
+                skycons.play();
             }
         });
     })
